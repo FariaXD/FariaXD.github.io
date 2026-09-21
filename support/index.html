@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Support &amp; contact — FariaXD</title>
+  <meta name="description" content="Get help with FariaXD's Unity tools, including FrameForge. Contact support by email.">
+  <link rel="icon" href="/assets/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="logo" href="/"><img src="/assets/logo.svg" alt="" width="28" height="28"> FariaXD</a>
+      <nav class="nav" aria-label="Main">
+        <a href="/">Home</a>
+        <a href="/frameforge/">FrameForge</a>
+        <a href="/support/" aria-current="page">Support</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap">
+      <section class="hero">
+        <span class="eyebrow">Support &amp; contact</span>
+        <h1>How can I help?</h1>
+        <p class="lead">Questions, bug reports, feature requests and business enquiries all go to one
+          address. Every message is read.</p>
+
+        <div class="contact-box">
+          <div>
+            <div class="muted" style="font-size:14px;font-weight:600">Email</div>
+            <div class="email">fariaxd.support@gmail.com</div>
+          </div>
+          <a class="btn primary" href="mailto:fariaxd.support@gmail.com?subject=FrameForge%20support">Write an email</a>
+        </div>
+      </section>
+
+      <section>
+        <h2>Reporting a problem</h2>
+        <p class="muted">These make a fix much faster:</p>
+        <ul class="checks">
+          <li>Your Unity version, and which render pipeline the project uses</li>
+          <li>The steps that lead to the problem</li>
+          <li>Any errors or warnings from the Console, copied as text</li>
+          <li>A screenshot of the FrameForge window or Inspector, if the problem is visual</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Before you write</h2>
+        <details>
+          <summary>Where is the documentation?</summary>
+          <p>The full manual comes with the package, as a PDF in <code>Assets/FrameForge/Documentation</code>.
+            The <code>README.md</code> in <code>Assets/FrameForge</code> has the same content.</p>
+        </details>
+        <details>
+          <summary>My attack animates but never hits anything.</summary>
+          <p>Check the Attack Player's <strong>Hit Mask</strong> includes the target's layer, and that
+            <strong>Query Triggers</strong> is on if the target's collider is a trigger — a Hurtbox Driver's collider always is.</p>
+        </details>
+        <details>
+          <summary>My boxes are on the wrong side when the character faces left.</summary>
+          <p>Author every box facing right, and set the Attack Player's <code>FacingSign</code> to -1 when the
+            character faces left. FrameForge mirrors the boxes for you.</p>
+        </details>
+        <details>
+          <summary>Does it work with my Unity version?</summary>
+          <p>FrameForge is developed and tested on Unity 6, and written to support Unity 2022.3 LTS and newer.
+            If you hit a compile error on an older version, email me and it will be fixed.</p>
+        </details>
+        <details>
+          <summary>Does it support 3D?</summary>
+          <p>Not at the moment — FrameForge is built for 2D physics.</p>
+        </details>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <span>© 2026 FariaXD · Unity is a trademark of Unity Technologies.</span>
+      <span><a href="/">Home</a> · <a href="/frameforge/">FrameForge</a></span>
+    </div>
+  </footer>
+</body>
+</html>

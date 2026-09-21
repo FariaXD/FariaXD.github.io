@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>FrameForge — Frame data editor for 2D combat in Unity</title>
+  <meta name="description" content="FrameForge: draw hitboxes and hurtboxes over your animation frames in Unity, set what they do on contact, and let a runtime component resolve the hits.">
+  <link rel="icon" href="/assets/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="logo" href="/"><img src="/assets/logo.svg" alt="" width="28" height="28"> FariaXD</a>
+      <nav class="nav" aria-label="Main">
+        <a href="/">Home</a>
+        <a href="/frameforge/" aria-current="page">FrameForge</a>
+        <a href="/support/">Support</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap">
+      <section class="hero">
+        <span class="eyebrow">Coming soon to the Unity Asset Store</span>
+        <h1>FrameForge</h1>
+        <p class="lead">Per-frame hitbox and hurtbox authoring for 2D combat in Unity. Draw boxes over your
+          animation frames, set what they do on contact, and let a runtime component resolve the hits.</p>
+        <div class="actions">
+          <a class="btn primary" href="#features">See the features</a>
+          <a class="btn" href="/support/">Questions? Get in touch</a>
+        </div>
+      </section>
+
+      <section>
+        <div class="product">
+          <div>
+            <h2>No colliders to toggle. No events to forget.</h2>
+            <p>The usual way to do combat in Unity is a pile of child objects with colliders, switched on and
+              off by Animation Events. An interrupted move leaves a collider armed; a missing event means an
+              attack that silently never connects.</p>
+            <p>FrameForge keeps hitboxes as data, drawn against the art itself, and resolves them with physics
+              queries on exactly the frames they are live — so there is nothing to leave switched on.</p>
+          </div>
+          <figure class="figure" style="margin:0">
+            <svg viewBox="0 0 480 300" role="img" aria-label="Diagram of the FrameForge editor: a character with a red hitbox in front of it and a green hurtbox around it, above a frame timeline.">
+              <rect class="ill-panel" x="1" y="1" width="478" height="206" rx="8"/>
+              <circle class="ill-body" cx="150" cy="72" r="15"/>
+              <rect class="ill-body" x="137" y="90" width="26" height="58" rx="6"/>
+              <rect class="ill-body" x="139" y="146" width="9" height="36" rx="3"/>
+              <rect class="ill-body" x="152" y="146" width="9" height="36" rx="3"/>
+              <path class="ill-body" d="M160 102 L205 96 L208 103 L162 110 Z"/>
+              <rect class="ill-hurt" x="126" y="52" width="48" height="132" rx="3"/>
+              <rect class="ill-ghost" x="172" y="84" width="62" height="40" rx="2"/>
+              <rect class="ill-hit" x="192" y="74" width="92" height="50" rx="2"/>
+              <rect class="ill-grip" x="188" y="70" width="8" height="8"/>
+              <rect class="ill-grip" x="280" y="70" width="8" height="8"/>
+              <rect class="ill-grip" x="188" y="120" width="8" height="8"/>
+              <rect class="ill-grip" x="280" y="120" width="8" height="8"/>
+              <text class="ill-text" x="296" y="92">hitbox · frame 4</text>
+              <text class="ill-text" x="296" y="108">5 damage · knockback</text>
+              <text class="ill-text" x="126" y="199">hurtbox</text>
+              <text class="ill-text" x="18" y="236">blade</text>
+              <text class="ill-text" x="18" y="272">body</text>
+              <g transform="translate(78 224)">
+                <rect class="ill-cell" x="0" y="0" width="44" height="18" rx="2"/>
+                <rect class="ill-cell" x="48" y="0" width="44" height="18" rx="2"/>
+                <rect class="ill-cell" x="96" y="0" width="44" height="18" rx="2"/>
+                <rect class="ill-cell-hit" x="144" y="0" width="44" height="18" rx="2"/>
+                <rect class="ill-cell-hit-soft" x="192" y="0" width="44" height="18" rx="2"/>
+                <rect class="ill-cell-hit" x="240" y="0" width="44" height="18" rx="2"/>
+                <rect class="ill-cell" x="288" y="0" width="44" height="18" rx="2"/>
+                <rect class="ill-cell" x="336" y="0" width="44" height="18" rx="2"/>
+                <rect class="ill-cell-hurt" x="0" y="36" width="380" height="18" rx="2"/>
+                <rect class="ill-now" x="192" y="-8" width="44" height="4" rx="2"/>
+              </g>
+            </svg>
+            <figcaption>Illustration of the editor: keyed hitbox, onion skin of the previous frame, and timeline.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section id="features">
+        <h2>Features</h2>
+        <div class="grid">
+          <div class="card">
+            <h3>Draw on the art</h3>
+            <p>Boxes are drawn over the sprite for each frame, read straight from your Animation Clip. Drag to move, grab a corner to resize.</p>
+          </div>
+          <div class="card">
+            <h3>Key a few frames</h3>
+            <p>Boxes interpolate between keys — smoothly, or snapping with frame-by-frame pixel art. A wide sweep needs two keys, not twenty.</p>
+          </div>
+          <div class="card">
+            <h3>Hitboxes, hurtboxes, custom</h3>
+            <p>Damage, knockback, hit stop and hit stun per box. Hurtboxes can reshape a character's hittable area during a move.</p>
+          </div>
+          <div class="card">
+            <h3>Your damage system</h3>
+            <p>FrameForge reports hits and applies nothing itself. Handle them in code, or route them to your own functions in the Inspector by tag.</p>
+          </div>
+          <div class="card">
+            <h3>Follows the Animator</h3>
+            <p>Optionally time attacks from the Animator, so speed changes and interrupted moves keep the boxes in step with the art.</p>
+          </div>
+          <div class="card">
+            <h3>Built for tuning</h3>
+            <p>Keyboard shortcuts, copy and paste between frames and attacks, onion skin, undo, and a hover explanation on every setting.</p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>What's included</h2>
+        <ul class="checks">
+          <li>The frame data editor window and inspector</li>
+          <li><strong>Attack Player</strong> — the runtime component that resolves hits</li>
+          <li><strong>Hurtbox Driver</strong> — reshapes a character's hittable collider during a move</li>
+          <li>A self-building demo you can drop into any scene, plus example scripts to learn from</li>
+          <li>Full source code, and automated tests including tests that run with physics</li>
+          <li>A full PDF manual</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Requirements</h2>
+        <table class="specs">
+          <tr><th>Unity</th><td>Developed and tested on Unity 6. Written to support Unity 2022.3 LTS and newer, but not yet tested on 2022.3.</td></tr>
+          <tr><th>Physics</th><td>2D physics only</td></tr>
+          <tr><th>Render pipeline</th><td>Any — FrameForge only reads positions and reports hits</td></tr>
+          <tr><th>Dependencies</th><td>None beyond Unity's built-in modules</td></tr>
+        </table>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <span>© 2026 FariaXD · Unity is a trademark of Unity Technologies.</span>
+      <span><a href="/support/">Support &amp; contact</a> · <a href="mailto:fariaxd.support@gmail.com">fariaxd.support@gmail.com</a></span>
+    </div>
+  </footer>
+</body>
+</html>
